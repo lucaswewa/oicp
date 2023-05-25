@@ -1,4 +1,4 @@
-# oicp
+# OICP
 Open Imaging Colorimeter &amp; Photometer
 
 Open Imaging Colorimeters and Photometers (OICP) are scientific-grade camera systems designed to make accurate and spatial measurements of luminance and chromaticity. OICP systems are calibrated to replicate human eyes' response to brightness and color.
