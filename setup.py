@@ -22,7 +22,8 @@ setup(
         "python-dateutil ~=2.8.2",
         "psutil ~=5.9.5",
         "markupsafe ~=2.0.1",
-        "opencv-python-headless ~=4.7.0.72",
+        # "opencv-python-headless ~=4.7.0.72",
+        "opencv-python ~=4.7.0.72",
         "sangaboard",
         "expiringdict ~=1.2.2",
         "camera-stage-mapping",
@@ -32,6 +33,8 @@ setup(
         "piexif ~=1.1.3",
         "labthings ~=1.3.2",
         "typing-extensions ~=4.6.2",
+        "pypylon ~=1.9.0",
+        "pythonnet ~=3.0.1",
         "RPI.GPIO;platform_machine=='armv7l'"
     ],
     extra_require={
