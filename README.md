@@ -7,6 +7,10 @@ The OICP systems can be used to design and qualify light-emitting elements and d
 
 ## Features
 
+Applications:
+* AR/VR inspections
+* Display panel inspections
+
 ## Hardware
 
 ## Software
