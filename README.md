@@ -14,3 +14,6 @@ Applications:
 ## Hardware
 
 ## Software
+
+## Licenses
+GPL/BSD/MIT?
