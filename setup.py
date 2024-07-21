@@ -14,28 +14,17 @@ setup(
     long_description=long_description,
     packages=find_packages(exclude=["contrib", "docs", "tests", "*node_module*"]),
     install_requires=[
-        "apispec[validation]",
-        "Flask ~=1.1",
-        "Pillow ~=9.5.0",
-        "numpy ~=1.24.3",
-        "scipy ~=1.10.1",
         "python-dateutil ~=2.8.2",
         "psutil ~=5.9.5",
-        "markupsafe ~=2.0.1",
-        # "opencv-python-headless ~=4.7.0.72",
-        "opencv-python ~=4.7.0.72",
-        "sangaboard",
+        "opencv-python-headless ~=4.10.0",
+        # "opencv-python ~=4.10.0",
         "expiringdict ~=1.2.2",
         "camera-stage-mapping",
         "picamerax",
-        "pyyaml ~=6.0",
-        "pytest-cov ~=4.1.0",
         "piexif ~=1.1.3",
-        "labthings ~=1.3.2",
-        "typing-extensions ~=4.6.2",
-        "pypylon ~=1.9.0",
+        "typing-extensions",
         "pythonnet ~=3.0.1",
-        "RPI.GPIO;platform_machine=='armv7l'"
+        "xthings",
     ],
     extra_require={
         "dev": [
@@ -54,9 +43,5 @@ setup(
         ]
     },
     dependency_links=[],
-    entry_points={
-        "console_scripts": [
-            "tetalab-serve=tetalab.app:tetalab_serve"
-        ]
-    }
+    entry_points={"console_scripts": ["tetalab-serve=tetalab.app:tetalab_serve"]},
 )
