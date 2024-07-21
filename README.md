@@ -16,4 +16,4 @@ Applications:
 ## Software
 
 ## Licenses
-GPL/BSD/MIT?
+MIT
