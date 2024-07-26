@@ -15,5 +15,11 @@ Applications:
 
 ## Software
 
+### Start Webapp
+* `cd  webapp`
+* `npm install`
+* `npm run build`
+* `npm run dev`
+
 ## Licenses
 MIT
