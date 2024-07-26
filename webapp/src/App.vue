@@ -1,11 +1,11 @@
 <template>
-  <div id="oicp_app">
-    <OicpAppContent/>
+  <div id="app-content-container">
+    <AppContent/>
   </div>
 </template>
 
 <script>
-import OicpAppContent from './components/AppContent.vue';
+import AppContent from './components/AppContent.vue';
 
 export default {
   name: "App",
@@ -15,7 +15,7 @@ export default {
     }
   },
   components: {
-    OicpAppContent
+    AppContent
   }
 }
 </script>
