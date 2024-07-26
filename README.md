@@ -1,25 +1,35 @@
-# OICP
-Open Imaging Colorimeter & Photometer
+# webapp
 
-Open Imaging Colorimeters and Photometers (OICP) are scientific-grade camera systems designed to make accurate and spatial measurements of luminance and chromaticity. OICP systems are calibrated to replicate human eyes' response to brightness and color.
+This template should help get you started developing with Vue 3 in Vite.
 
-The OICP systems can be used to design and qualify light-emitting elements and devices, such as cell phone display panels, AR/VR displays and any display devices that are visible to human eyes.
+## Recommended IDE Setup
 
-## Features
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-Applications:
-* AR/VR inspections
-* Display panel inspections
+## Customize configuration
 
-## Hardware
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Software
+## Project Setup
 
-### Start Webapp
-* `cd  webapp`
-* `npm install`
-* `npm run build`
-* `npm run dev`
+```sh
+npm install
+```
 
-## Licenses
-MIT
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
