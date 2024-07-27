@@ -54,9 +54,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+@import "../assets/less/theme.less";
+
 .tabicon-active {
-  color: #C32280 !important;
+  color: #fff !important;
   background-color: @global-primary-background !important;
 }
 </style>

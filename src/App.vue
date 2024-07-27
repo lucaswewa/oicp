@@ -1,5 +1,8 @@
 <template>
-  <div id="app-content-container">
+  <div
+    id="app-content-container"
+    class="uk-height-1-1 uk-margin-remove uk-padding-remove"
+  >
     <AppContent/>
   </div>
 </template>
@@ -8,10 +11,10 @@
 import AppContent from './components/AppContent.vue';
 
 export default {
-  name: "App",
+  name: "OicpApp",
   data: function() {
     return {
-      name: "my name"
+      name: "My OICP App"
     }
   },
   components: {
@@ -19,3 +22,9 @@ export default {
   }
 }
 </script>
+
+
+<style lang="less">
+@import "../node_modules/uikit/src/less/uikit.less";
+@import "./assets/less/theme.less";
+</style>

@@ -1,13 +1,40 @@
 <template>
-  <div id="app-content">
+  <div
+    id="app-content"
+    class="uk-margin-remove uk-padding-remove uk-height-1-1"
+    uk-grid
+  >
     <div id="navigator-container">
-      <div id="navigator">
+      <div 
+        id="navigator"
+        class="uk-flex uk-flex-column uk-padding-remove uk-width-auto uk-height-1-1 uk-text-center"
+      >
         <template v-for="(item, index) in navigatorTabs">
-          <TabIcon :id="item.id" :tabID="item.id" :title="item.title" :currentTab="currentTab" @setTab="setTab">
+          <TabIcon 
+            :id="item.id" 
+            :tabID="item.id" 
+            :title="item.title" 
+            :currentTab="currentTab"
+            @setTab="setTab"
+          >
             <i class="material-icons">{{ item.icon }}</i>
           </TabIcon>
         </template>
       </div>
+    </div>
+
+    <div
+      id="content-container"
+      class="uk-padding-remove uk-height-1-1 uk-width-expand"
+    >
+      <TabContent
+        v-for="item in navigatorTabs"
+        :id="item.id + 'tab-content'"
+        :tabID="item.id"
+        :currentTab="currentTab"
+      >
+        <p>{{ item.id }}</p>
+      </TabContent>
     </div>
   </div>
 
@@ -15,12 +42,14 @@
 
 <script>
 import TabIcon from './TabIcon.vue';
+import TabContent from './TabContent.vue'
 
 export default {
   name: "AppContent",
 
   components: {
-    TabIcon
+    TabIcon,
+    TabContent
   },
 
   data: function() {
