@@ -33,7 +33,7 @@
         :tabID="item.id"
         :currentTab="currentTab"
       >
-        <p>{{ item.id }}</p>
+        <component :is="item.component"></component>
       </TabContent>
     </div>
   </div>
@@ -42,14 +42,25 @@
 
 <script>
 import TabIcon from './TabIcon.vue';
-import TabContent from './TabContent.vue'
+import TabContent from './TabContent.vue';
+
+import HomeContent from './HomeContent.vue'
+import CaptureContent from './CaptureContent.vue';
+import StageContent from './StageContent.vue';
+import GalleryContent from './GalleryContent.vue';
+import SettingsContent from './SettingsContent.vue';
 
 export default {
   name: "AppContent",
 
   components: {
     TabIcon,
-    TabContent
+    TabContent,
+    HomeContent,
+    CaptureContent,
+    StageContent,
+    GalleryContent,
+    SettingsContent
   },
 
   data: function() {
@@ -65,37 +76,31 @@ export default {
           id: "home",
           icon: "home",
           title: "Home",
-          component: null
-        },
-        {
-          id: "view",
-          icon: "visibility",
-          title: "View",
-          component: null
-        },
-        {
-          id: "gallery",
-          icon: "photo_library",
-          title: "Gallery",
-          component: null
-        },
-        {
-          id: "move",
-          icon: "gamepad",
-          title: "Move",
-          component: null
+          component: HomeContent
         },
         {
           id: "capture",
           icon: "camera",
           title: "Capture",
-          component: null
+          component: CaptureContent
+        },
+        {
+          id: "stage",
+          icon: "gamepad",
+          title: "Stage",
+          component: StageContent
+        },
+        {
+          id: "gallery",
+          icon: "photo_library",
+          title: "Gallery",
+          component: GalleryContent
         },
         {
           id: "settings",
           icon: "settings",
           title: "Settings",
-          component: null
+          component: SettingsContent
         }
       ]
     }
@@ -107,5 +112,5 @@ export default {
       console.log("From AppContent" + this.currentTab)
     }
   }
-}
+};
 </script>
