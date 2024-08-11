@@ -100,12 +100,6 @@ export default {
           component: CalibrationControl
         },
         {
-          id: "stage",
-          icon: "gamepad",
-          title: "Stage",
-          component: StageContent
-        },
-        {
           id: "gallery",
           icon: "photo_library",
           title: "Gallery",
@@ -116,6 +110,12 @@ export default {
           icon: "settings",
           title: "Settings",
           component: SettingsContent
+        },
+        {
+          id: "stage",
+          icon: "gamepad",
+          title: "Stage",
+          component: StageContent
         }
       ]
     }
