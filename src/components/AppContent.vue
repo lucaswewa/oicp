@@ -84,13 +84,13 @@ export default {
         {
           id: "measurement",
           icon: "monochrome_photos",
-          title: "Measurement",
+          title: "Measure",
           component: MeasurementControl
         },
         {
           id: "capture",
           icon: "camera",
-          title: "HW Control",
+          title: "Instrument",
           component: CaptureContent
         },
         {
@@ -102,7 +102,7 @@ export default {
         {
           id: "gallery",
           icon: "photo_library",
-          title: "Gallery",
+          title: "Results",
           component: GalleryContent
         },
         {
