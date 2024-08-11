@@ -1,7 +1,7 @@
 <template>
   <div uk-grid class="uk-height-1-1 uk-margin-remove uk-padding-remove">
     <div class="control-component">
-      <HardwareControlPanel />
+      <InstrumentControlPanel />
     </div>
     <div class="view-component uk-width-expand">
       <StreamControl />
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import HardwareControlPanel from './hardwareControlPanel.vue';
+import InstrumentControlPanel from './instrumentControlPanel.vue';
 import StreamControl from '../streamControl/streamControl.vue';
 export default {
   name: "Components Control",
 
   components: {
-    HardwareControlPanel,
+    InstrumentControlPanel,
     StreamControl
   }
 }

@@ -46,7 +46,7 @@ import TabContent from './tabControl/TabContent.vue';
 
 import HomeContent from './HomeContent.vue'
 import MeasurementControl from './measurementControl/measurementControl.vue';
-import CaptureContent from './hardwareControl/hardwareControl.vue';
+import CaptureContent from './instrumentControl/instrumentControl.vue';
 import CalibrationControl from './calibrationControl/calibrationControl.vue';
 import StageContent from './StageContent.vue';
 import GalleryContent from './GalleryContent.vue';
