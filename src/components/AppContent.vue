@@ -81,7 +81,7 @@ export default {
         {
           id: "capture",
           icon: "camera",
-          title: "Capture",
+          title: "HW Control",
           component: CaptureContent
         },
         {

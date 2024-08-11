@@ -1,19 +1,19 @@
 <template>
   <div uk-grid class="uk-height-1-1 uk-margin-remove uk-padding-remove">
     <div class="control-component">
-      <CaptureControlPanelContent/>
+      <HardwareControlPanel/>
     </div>
   </div>
 </template>
 
 <script>
-import CaptureControlPanelContent from './hardwareControlPanel.vue';
+import HardwareControlPanel from './hardwareControlPanel.vue';
 
 export default {
-  name: "Capture Content",
+  name: "Components Control",
 
   components: {
-    CaptureControlPanelContent
+    HardwareControlPanel
   }
 }
 </script>
