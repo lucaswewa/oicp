@@ -50,7 +50,7 @@ import CaptureContent from './hardwareControl/hardwareControl.vue';
 import CalibrationControl from './calibrationControl/calibrationControl.vue';
 import StageContent from './StageContent.vue';
 import GalleryContent from './GalleryContent.vue';
-import SettingsContent from './SettingsContent.vue';
+import SettingsContent from './settingsControl/SettingsContent.vue';
 
 export default {
   name: "AppContent",

@@ -114,8 +114,8 @@ import FeaturesSettingsContent from './FeaturesSettingsContent.vue';
 import OicpSettingsContent from './OicpSettingsContent.vue';
 import StageSettingsContent from './StageSettingsContent.vue';
 import StreamSettingsContent from './StreamSettingsContent.vue';
-import TabContent from './tabControl/TabContent.vue';
-import TabIcon from './tabControl/TabIcon.vue';
+import TabContent from '../tabControl/TabContent.vue';
+import TabIcon from '../tabControl/TabIcon.vue';
 
 export default {
   name: "Settings Content",
@@ -152,7 +152,7 @@ export default {
 
 <style lang="less" scoped>
 // Custom UIkit CSS modifications
-@import "../assets/less/theme.less";
+@import "../../assets/less/theme.less";
 
 .settings-nav {
   overflow-y: auto;
