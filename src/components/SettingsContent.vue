@@ -114,8 +114,8 @@ import FeaturesSettingsContent from './FeaturesSettingsContent.vue';
 import OicpSettingsContent from './OicpSettingsContent.vue';
 import StageSettingsContent from './StageSettingsContent.vue';
 import StreamSettingsContent from './StreamSettingsContent.vue';
-import TabContent from './TabContent.vue';
-import TabIcon from './TabIcon.vue';
+import TabContent from './tabControl/TabContent.vue';
+import TabIcon from './tabControl/TabIcon.vue';
 
 export default {
   name: "Settings Content",

@@ -41,11 +41,11 @@
 </template>
 
 <script>
-import TabIcon from './TabIcon.vue';
-import TabContent from './TabContent.vue';
+import TabIcon from './tabControl/TabIcon.vue';
+import TabContent from './tabControl/TabContent.vue';
 
 import HomeContent from './HomeContent.vue'
-import CaptureContent from './CaptureContent.vue';
+import CaptureContent from './hardwareControl/CaptureContent.vue';
 import StageContent from './StageContent.vue';
 import GalleryContent from './GalleryContent.vue';
 import SettingsContent from './SettingsContent.vue';

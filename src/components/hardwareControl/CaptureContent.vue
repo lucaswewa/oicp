@@ -8,7 +8,6 @@
 
 <script>
 import CaptureControlPanelContent from './captureControlPanelContent.vue';
-import captureControlPanelContent from './captureControlPanelContent.vue';
 
 export default {
   name: "Capture Content",
