@@ -46,6 +46,7 @@ import TabContent from './tabControl/TabContent.vue';
 
 import HomeContent from './HomeContent.vue'
 import CaptureContent from './hardwareControl/hardwareControl.vue';
+import CalibrationControl from './calibrationControl/calibrationControl.vue';
 import StageContent from './StageContent.vue';
 import GalleryContent from './GalleryContent.vue';
 import SettingsContent from './SettingsContent.vue';
@@ -83,6 +84,12 @@ export default {
           icon: "camera",
           title: "HW Control",
           component: CaptureContent
+        },
+        {
+          id: "calibration",
+          icon: "star",
+          title: "Calibration",
+          component: CalibrationControl
         },
         {
           id: "stage",
