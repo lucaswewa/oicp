@@ -51,6 +51,7 @@ import CalibrationControl from './calibrationControl/calibrationControl.vue';
 import StageContent from './StageContent.vue';
 import GalleryContent from './GalleryContent.vue';
 import SettingsContent from './settingsControl/SettingsContent.vue';
+import ViewControl from './streamControl/viewControl.vue';
 
 export default {
   name: "AppContent",
@@ -63,7 +64,8 @@ export default {
     CaptureContent,
     StageContent,
     GalleryContent,
-    SettingsContent
+    SettingsContent,
+    ViewControl
   },
 
   data: function() {
@@ -80,6 +82,12 @@ export default {
           icon: "home",
           title: "Home",
           component: HomeContent
+        },
+        {
+          id: "view",
+          icon: "visibility",
+          title: "View",
+          component: ViewControl
         },
         {
           id: "measurement",

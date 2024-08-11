@@ -190,7 +190,7 @@
         </div>
   
         <div id="mini-stream">
-          <!-- <miniStreamDisplay /> -->
+          <MiniStreamDisplay />
         </div>
       </div>
     </div>
@@ -199,15 +199,15 @@
   <script>
 //   import axios from "axios";
 //   import cameraCalibrationSettings from "./cameraSettingsComponents/cameraCalibrationSettings.vue";
-//   import miniStreamDisplay from "../../genericComponents/miniStreamDisplay.vue";
+  import MiniStreamDisplay from "../streamControl/miniStreamControl.vue";
   
   // Export main app
   export default {
     name: "CameraSettings",
   
     components: {
-    //   cameraCalibrationSettings,
-    //   miniStreamDisplay
+      //   cameraCalibrationSettings,
+      MiniStreamDisplay
     },
   
     data: function() {
