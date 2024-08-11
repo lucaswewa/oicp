@@ -45,6 +45,7 @@ import TabIcon from './tabControl/TabIcon.vue';
 import TabContent from './tabControl/TabContent.vue';
 
 import HomeContent from './HomeContent.vue'
+import MeasurementControl from './measurementControl/measurementControl.vue';
 import CaptureContent from './hardwareControl/hardwareControl.vue';
 import CalibrationControl from './calibrationControl/calibrationControl.vue';
 import StageContent from './StageContent.vue';
@@ -58,6 +59,7 @@ export default {
     TabIcon,
     TabContent,
     HomeContent,
+    MeasurementControl,
     CaptureContent,
     StageContent,
     GalleryContent,
@@ -78,6 +80,12 @@ export default {
           icon: "home",
           title: "Home",
           component: HomeContent
+        },
+        {
+          id: "measurement",
+          icon: "monochrome_photos",
+          title: "Measurement",
+          component: MeasurementControl
         },
         {
           id: "capture",
