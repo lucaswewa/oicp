@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import CaptureControlPanelContent from './captureControlPanelContent.vue';
+import CaptureControlPanelContent from './hardwareControlPanel.vue';
 
 export default {
   name: "Capture Content",

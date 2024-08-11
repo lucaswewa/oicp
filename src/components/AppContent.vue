@@ -45,7 +45,7 @@ import TabIcon from './tabControl/TabIcon.vue';
 import TabContent from './tabControl/TabContent.vue';
 
 import HomeContent from './HomeContent.vue'
-import CaptureContent from './hardwareControl/CaptureContent.vue';
+import CaptureContent from './hardwareControl/hardwareControl.vue';
 import StageContent from './StageContent.vue';
 import GalleryContent from './GalleryContent.vue';
 import SettingsContent from './SettingsContent.vue';
