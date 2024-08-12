@@ -241,6 +241,7 @@
         <a class="uk-accordion-title" href="#">Prescription Compensation Control</a>
         <div class="uk-accordion-content">
           <div >
+            <!-- RX Spherical Power -->
             <div class="uk-margin-small uk-margin-remove-bottom">
               <label class="uk-form-label" for="form-stacked-text">
                 Spherical power:
@@ -248,9 +249,27 @@
               <input
                 v-model="prescriptionSphericalPower"
                 class="uk-input uk-form-small"
-                type="string"
+                type="number"
               />
             </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+              <button
+                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                @click="handleGetRxSphPower()"
+              >
+                Get Sph Power
+              </button>
+            </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+              <button
+                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                @click="handleMoveRxSphPower()"
+              >
+                Move Sph Power
+              </button>
+            </div>
+
+            <!-- RX Cylindrical Power -->
             <div class="uk-margin-small uk-margin-remove-bottom">
               <label class="uk-form-label" for="form-stacked-text">
                 Cylindrical power:
@@ -258,9 +277,27 @@
               <input
                 v-model="prescriptionCylindricalPower"
                 class="uk-input uk-form-small"
-                type="string"
+                type="number"
               />
             </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+              <button
+                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                @click="handleGetRxCylPower()"
+              >
+                Get Cyl Power
+              </button>
+            </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+              <button
+                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                @click="handleMoveRxCylPower()"
+              >
+                Move Cyl Power
+              </button>
+            </div>
+
+            <!-- RX Cylindrical axis -->
             <div class="uk-margin-small uk-margin-remove-bottom">
               <label class="uk-form-label" for="form-stacked-text">
                 Cylindrical axis:
@@ -268,15 +305,23 @@
               <input
                 v-model="prescriptionCylindricalAxis"
                 class="uk-input uk-form-small"
-                type="string"
+                type="number"
               />
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
                 class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                @click="handleFocusing()"
+                @click="handleGetRxCylAxis()"
               >
-                Apply Prescription Compensation
+                Get Cyl Axis
+              </button>
+            </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+              <button
+                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                @click="handleMoveRxCylAxis()"
+              >
+                Move Cyl Axis
               </button>
             </div>
           </div>
@@ -308,9 +353,9 @@ export default {
       ndFilter: 'ND1',
       focusingPosition: 12.345,
       aperature: '3mm',
-      prescriptionSphericalPower: '-1d',
-      prescriptionCylindricalPower: '-1d',
-      prescriptionCylindricalAxis: '15deg'
+      prescriptionSphericalPower: 0.0,
+      prescriptionCylindricalPower: 0.0,
+      prescriptionCylindricalAxis: 0.0
     }
   },
 
@@ -383,6 +428,45 @@ export default {
       const config = { headers: {'Content-Type': 'application/json'} };
       axios.post("http://localhost:8000/myxthing/move_stage_rel", pos_rel, config).then(() => {
         this.handleGetStagePosition()
+      })
+    },
+
+    handleGetRxSphPower: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.get("http://localhost:8000/myxthing/rx_sph_power").then(response => {
+        this.prescriptionSphericalPower = response.data
+      })
+    },
+    handleMoveRxSphPower: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.post("http://localhost:8000/myxthing/move_rx_sph_power", this.prescriptionSphericalPower, config).then(() => {
+        this.handleGetRxSphPower()
+      })
+    },
+
+    handleGetRxCylPower: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.get("http://localhost:8000/myxthing/rx_cyl_power").then(response => {
+        this.prescriptionCylindricalPower = response.data
+      })
+    },
+    handleMoveRxCylPower: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.post("http://localhost:8000/myxthing/move_rx_cyl_power", this.prescriptionCylindricalPower, config).then(() => {
+        this.handleGetRxCylPower()
+      })
+    },
+
+    handleGetRxCylAxis: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.get("http://localhost:8000/myxthing/rx_cyl_axis").then(response => {
+        this.prescriptionCylindricalAxis = response.data
+      })
+    },
+    handleMoveRxCylAxis: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.post("http://localhost:8000/myxthing/move_rx_cyl_axis", this.prescriptionCylindricalAxis, config).then(() => {
+        this.handleGetRxCylAxis()
       })
     }
   }
