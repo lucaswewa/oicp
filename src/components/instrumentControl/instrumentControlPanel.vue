@@ -106,6 +106,22 @@
                 type="string"
               />
             </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleGetColorFilter()"
+                >
+                  Get Color Filter
+                </button>
+              </div>
+              <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handlePostColorFilter()"
+                >
+                  Change Color Filter
+                </button>
+              </div>
           </div>
         </div>
       </li>
@@ -125,6 +141,22 @@
                 type="string"
               />
             </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleGetNDFilter()"
+                >
+                  Get ND Filter
+                </button>
+              </div>
+              <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handlePostNDFilter()"
+                >
+                  Change ND Filter
+                </button>
+              </div>
           </div>
         </div>
       </li>
@@ -147,7 +179,15 @@
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
                 class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                @click="handleFocusing()"
+                @click="handleGetStagePosition()"
+              >
+                Get Stage Position
+              </button>
+            </div>
+            <div class="uk-margin-small uk-margin-remove-bottom">
+              <button
+                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                @click="handleMoveStagePositionAbs()"
               >
                 Move to Position
               </button>
@@ -159,17 +199,17 @@
               <p>
                 <button
                   class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                  @click="handleFocusing()"
+                  @click="handleMoveStagePositionRel(-0.5)"
                 >
-                  Move Near
+                  Move Near -0.5 mm
                 </button>
               </p>
               <p>
                 <button
                   class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                  @click="handleFocusing()"
+                  @click="handleMoveStagePositionRel(0.5)"
                 >
-                  Move Far
+                  Move Far +0.5 mm
                 </button>
               </p>
             </div>
@@ -302,6 +342,48 @@ export default {
     handleStopStreaming: function() {
       console.log("handle Stop Streaming")
       axios.post("http://localhost:8000/myxthing/stop_stream_camera")
+    },
+    handleGetColorFilter: function() {
+      console.log(this.colorFilter)
+      axios.get("http://localhost:8000/myxthing/color_filter").then(response => {
+        console.log(response.data)
+        this.colorFilter = response.data
+      })
+    },
+    handlePostColorFilter: function() {
+      console.log(this.colorFilter)
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.post("http://localhost:8000/myxthing/move_color_filter", this.colorFilter, config)
+    },
+    handleGetNDFilter: function() {
+      console.log(this.ndFilter)
+      axios.get("http://localhost:8000/myxthing/nd_filter").then(response => {
+        console.log(response.data)
+        this.ndFilter = response.data
+      })
+    },
+    handlePostNDFilter: function() {
+      console.log(this.ndFilter)
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.post("http://localhost:8000/myxthing/move_nd_filter", this.ndFilter, config)
+    },
+    handleGetStagePosition: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.get("http://localhost:8000/myxthing/stage").then(response => {
+        this.focusingPosition = response.data
+      })
+    },
+    handleMoveStagePositionAbs: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.post("http://localhost:8000/myxthing/move_stage_abs", this.focusingPosition, config).then(() => {
+        this.handleGetStagePosition()
+      })
+    },
+    handleMoveStagePositionRel: function(pos_rel) {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.post("http://localhost:8000/myxthing/move_stage_rel", pos_rel, config).then(() => {
+        this.handleGetStagePosition()
+      })
     }
   }
 }
