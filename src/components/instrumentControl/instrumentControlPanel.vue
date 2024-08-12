@@ -50,6 +50,38 @@
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
                   class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleOpenCamera()"
+                >
+                  Open Camera
+                </button>
+              </div>
+              <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleCloseCamera()"
+                >
+                  Close Camera
+                </button>
+              </div>
+              <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleStartStreaming()"
+                >
+                  Start Streaming
+                </button>
+              </div>
+              <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleStopStreaming()"
+                >
+                  Stop Streaming
+                </button>
+              </div>
+              <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleCapture()"
                 >
                   Capture
@@ -215,6 +247,8 @@
 </template>
 
 <script>
+import axios
+ from 'axios';
 export default {
   name: "Components Control Panel",
 
@@ -251,6 +285,23 @@ export default {
   methods: {
     handleCapture: function() {
       console.log("handle capture")
+      axios.post("http://localhost:8000/myxthing/capture_camera")
+    },
+    handleOpenCamera: function() {
+      console.log("handle Open Camera")
+      axios.post("http://localhost:8000/myxthing/open_camera")
+    },
+    handleCloseCamera: function() {
+      console.log("handle Close Camera")
+      axios.post("http://localhost:8000/myxthing/close_camera")
+    },
+    handleStartStreaming: function() {
+      console.log("handle Start Streaming")
+      axios.post("http://localhost:8000/myxthing/start_stream_camera")
+    },
+    handleStopStreaming: function() {
+      console.log("handle Stop Streaming")
+      axios.post("http://localhost:8000/myxthing/stop_stream_camera")
     }
   }
 }
