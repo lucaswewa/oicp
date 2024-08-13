@@ -49,7 +49,7 @@ import MeasurementControl from './measurementControl/measurementControl.vue';
 import CaptureContent from './instrumentControl/instrumentControl.vue';
 import CalibrationControl from './calibrationControl/calibrationControl.vue';
 import StageContent from './StageContent.vue';
-import GalleryContent from './GalleryContent.vue';
+import ResultsContent from './ResultsContent.vue';
 import SettingsContent from './settingsControl/SettingsContent.vue';
 import ViewControl from './streamControl/viewControl.vue';
 
@@ -63,7 +63,7 @@ export default {
     MeasurementControl,
     CaptureContent,
     StageContent,
-    GalleryContent,
+    ResultsContent,
     SettingsContent,
     ViewControl
   },
@@ -108,10 +108,10 @@ export default {
           component: CalibrationControl
         },
         {
-          id: "gallery",
+          id: "results",
           icon: "photo_library",
           title: "Results",
-          component: GalleryContent
+          component: ResultsContent
         },
         {
           id: "settings",
