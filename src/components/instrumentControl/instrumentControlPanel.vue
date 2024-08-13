@@ -90,14 +90,6 @@
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
                   class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                  @click="handleCloseCamera()"
-                >
-                  Close Camera
-                </button>
-              </div>
-              <div class="uk-margin-small uk-margin-remove-bottom">
-                <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleStartStreaming()"
                 >
                   Start Streaming
@@ -109,6 +101,14 @@
                   @click="handleStopStreaming()"
                 >
                   Stop Streaming
+                </button>
+              </div>
+              <div class="uk-margin-small uk-margin-remove-bottom">
+                <button
+                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleCloseCamera()"
+                >
+                  Close Camera
                 </button>
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
