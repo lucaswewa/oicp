@@ -1,4 +1,5 @@
 <template>
-    <p>Gallery Content</p>
-    <p>Measurement Results</p>
+  <ul>
+    <li>measurement list</li>
+  </ul>
 </template>

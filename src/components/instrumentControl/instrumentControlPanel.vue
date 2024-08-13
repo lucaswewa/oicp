@@ -2,6 +2,38 @@
   <div
     id="capture-control-panel"
     class="uk-padding-small">
+    <div>Todo:
+      <ul>
+        <li>Camera
+          <ul>
+            <li>focus mode</li>
+            <li>adjust exposure</li>
+            <li>Camera Type: virtual camera</li>
+            <li>Camera set temperature: -10C</li>
+            <li>Saturation Level: 75%</li>
+            <li>Maximum Exposure (ms): 5000</li>
+          </ul>
+        </li>
+        <li>Color Filter
+          <ul>
+            <li>XYZ, Installed</li>
+            <li>Shift x, shift y</li>
+            <li>maginification</li>
+            <li>description</li>
+          </ul>
+        </li>
+        <li>ND Filters
+          <ul>
+            <li>Clear, ND1, ND2, ...</li>
+            <li>Shift x, shift y</li>
+            <li>Transmission</li>
+            <li>LuminanceScale</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
 
     <ul uk-accordion="multiple: true">
       <!-- Camera Control -->
