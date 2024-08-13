@@ -90,7 +90,7 @@
         :currentTab="currentTab"
       >
         <div class="settings-pane uk-padding-small">
-          <StageSettingsContent/>
+          <StageSettingsContent foo="abc" bar="123.456"/>
         </div>
       </TabContent>
 

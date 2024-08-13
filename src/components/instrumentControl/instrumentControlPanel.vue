@@ -33,8 +33,6 @@
       </ul>
     </div>
 
-
-
     <ul uk-accordion="multiple: true">
       <!-- Camera Control -->
       <li :class="{ 'uk-open': true }">
@@ -364,10 +362,9 @@
 </template>
 
 <script>
-import axios
- from 'axios';
+import axios from 'axios';
 export default {
-  name: "Components Control Panel",
+  name: "Components-Control-Panel",
 
   data: function() {
     return {
@@ -445,7 +442,6 @@ export default {
       axios.post("http://localhost:8000/myxthing/move_nd_filter", this.ndFilter, config)
     },
     handleGetStagePosition: function() {
-      const config = { headers: {'Content-Type': 'application/json'} };
       axios.get("http://localhost:8000/myxthing/stage").then(response => {
         this.focusingPosition = response.data
       })
@@ -464,7 +460,6 @@ export default {
     },
 
     handleGetRxSphPower: function() {
-      const config = { headers: {'Content-Type': 'application/json'} };
       axios.get("http://localhost:8000/myxthing/rx_sph_power").then(response => {
         this.prescriptionSphericalPower = response.data
       })
@@ -477,7 +472,6 @@ export default {
     },
 
     handleGetRxCylPower: function() {
-      const config = { headers: {'Content-Type': 'application/json'} };
       axios.get("http://localhost:8000/myxthing/rx_cyl_power").then(response => {
         this.prescriptionCylindricalPower = response.data
       })
@@ -490,7 +484,6 @@ export default {
     },
 
     handleGetRxCylAxis: function() {
-      const config = { headers: {'Content-Type': 'application/json'} };
       axios.get("http://localhost:8000/myxthing/rx_cyl_axis").then(response => {
         this.prescriptionCylindricalAxis = response.data
       })

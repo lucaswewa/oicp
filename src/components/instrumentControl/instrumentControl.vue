@@ -9,15 +9,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import InstrumentControlPanel from './instrumentControlPanel.vue';
 import StreamControl from '../streamControl/streamControl.vue';
-export default {
-  name: "Components Control",
-
-  components: {
-    InstrumentControlPanel,
-    StreamControl
-  }
-}
 </script>
