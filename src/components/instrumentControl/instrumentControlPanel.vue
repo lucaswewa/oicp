@@ -2,37 +2,6 @@
   <div
     id="capture-control-panel"
     class="uk-padding-small">
-    <div>Todo:
-      <ul>
-        <li>Camera
-          <ul>
-            <li>focus mode</li>
-            <li>adjust exposure</li>
-            <li>Camera Type: virtual camera</li>
-            <li>Camera set temperature: -10C</li>
-            <li>Saturation Level: 75%</li>
-            <li>Maximum Exposure (ms): 5000</li>
-          </ul>
-        </li>
-        <li>Color Filter
-          <ul>
-            <li>XYZ, Installed</li>
-            <li>Shift x, shift y</li>
-            <li>maginification</li>
-            <li>description</li>
-          </ul>
-        </li>
-        <li>ND Filters
-          <ul>
-            <li>Clear, ND1, ND2, ...</li>
-            <li>Shift x, shift y</li>
-            <li>Transmission</li>
-            <li>LuminanceScale</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
     <ul uk-accordion="multiple: true">
       <!-- Camera Control -->
       <li :class="{ 'uk-open': true }">
@@ -58,7 +27,7 @@
                   <div class="uk-width-1-3">
                     <button
                       class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                      @click="handleMoveStagePositionRel(0.5)"
+                      @click="handlePuExposureTime()"
                     >
                       Set
                     </button>
@@ -82,7 +51,7 @@
                   <div class="uk-width-1-3">
                     <button
                       class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                      @click="handleMoveStagePositionRel(0.5)"
+                      @click="handlePutPixelFormat()"
                     >
                       Set
                     </button>
@@ -91,7 +60,7 @@
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleOpenCamera()"
                 >
                   Open Camera
@@ -99,7 +68,7 @@
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleStartStreaming()"
                 >
                   Start Streaming
@@ -107,7 +76,7 @@
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleStopStreaming()"
                 >
                   Stop Streaming
@@ -115,7 +84,7 @@
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleCloseCamera()"
                 >
                   Close Camera
@@ -123,7 +92,7 @@
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleCapture()"
                 >
                   Capture
@@ -152,7 +121,7 @@
 
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleGetColorFilter()"
                 >
                   Get Color Filter
@@ -182,7 +151,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleGetNDFilter()"
                 >
                   Get ND Filter
@@ -209,7 +178,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                 @click="handleGetStagePosition()"
               >
                 Get Stage Position
@@ -285,7 +254,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                 @click="handleGetRxSphPower()"
               >
                 Get Sph Power
@@ -293,7 +262,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                 @click="handleMoveRxSphPower()"
               >
                 Move Sph Power
@@ -313,7 +282,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                 @click="handleGetRxCylPower()"
               >
                 Get Cyl Power
@@ -321,7 +290,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                 @click="handleMoveRxCylPower()"
               >
                 Move Cyl Power
@@ -341,7 +310,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                 @click="handleGetRxCylAxis()"
               >
                 Get Cyl Axis
@@ -349,7 +318,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                 @click="handleMoveRxCylAxis()"
               >
                 Move Cyl Axis
@@ -396,6 +365,11 @@ export default {
     }
   },
 
+  mounted: function() {
+    this.handleGetExposureTime()
+    this.handleGetPixelFormat()
+  },
+
   methods: {
     handleCapture: function() {
       console.log("handle capture")
@@ -416,6 +390,26 @@ export default {
     handleStopStreaming: function() {
       console.log("handle Stop Streaming")
       axios.post("http://localhost:8000/myxthing/stop_stream_camera")
+    },
+    handleGetExposureTime: function() {
+      axios.get("http://localhost:8000/myxthing/exposure_time").then(response => {
+        var exposure = response.data
+        this.cameraExposureTime = exposure 
+      })
+    },
+    handlePuExposureTime: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.put("http://localhost:8000/myxthing/exposure_time", this.cameraExposureTime, config)
+    },
+    handleGetPixelFormat: function() {
+      axios.get("http://localhost:8000/myxthing/pixel_format").then(response => {
+        var format = response.data
+        this.cameraPixelFormat = format
+      })
+    },
+    handlePutPixelFormat: function() {
+      const config = { headers: {'Content-Type': 'application/json'} };
+      axios.put("http://localhost:8000/myxthing/pixel_format", this.cameraPixelFormat, config)
     },
     handleGetColorFilter: function() {
       console.log(this.colorFilter)
