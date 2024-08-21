@@ -22,12 +22,13 @@
                       class="uk-input uk-form-small"
                       type="number"
                       min="1000"
+                      @keyup.enter="handlePutExposureTime"
                     />
                   </div>
                   <div class="uk-width-1-3">
                     <button
                       class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                      @click="handlePuExposureTime()"
+                      @click="handlePutExposureTime()"
                     >
                       Set
                     </button>
@@ -41,13 +42,18 @@
                 </label>
                 <div class="uk-margin-remove-bottom" uk-grid>
                   <div class="uk-width-2-3">
-                    <input
+                    <!-- <input
                       v-model="cameraPixelFormat"
                       class="uk-input uk-form-small"
                       type="text"
                       min="100"
-                    />
-                  </div>
+                    /> -->
+                    <select v-model="cameraPixelFormat" class="uk-select uk-form-small uk-margin-small" @change="onSetPixelFormat($event)">
+                <option>MONO8</option>
+                <option>MONO10</option>
+                <option>MONO12</option>
+              </select>   
+                              </div>
                   <div class="uk-width-1-3">
                     <button
                       class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
@@ -397,7 +403,7 @@ export default {
         this.cameraExposureTime = exposure 
       })
     },
-    handlePuExposureTime: function() {
+    handlePutExposureTime: function() {
       const config = { headers: {'Content-Type': 'application/json'} };
       axios.put("http://localhost:8000/myxthing/exposure_time", this.cameraExposureTime, config)
     },
@@ -424,8 +430,10 @@ export default {
       axios.post("http://localhost:8000/myxthing/move_color_filter", this.colorFilter, config)
     },
     onSetColorFilter: function(event) {
-      console.log(event)
       this.handlePostColorFilter()
+    },
+    onSetPixelFormat: function(event) {
+      this.handlePutPixelFormat()
     },
     handleGetNDFilter: function() {
       console.log(this.ndFilter)

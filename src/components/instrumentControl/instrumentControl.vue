@@ -4,7 +4,7 @@
       <InstrumentControlPanel />
     </div>
     <div class="view-component uk-width-expand">
-      <StreamControl />
+      <MiniStreamControl />
     </div>
   </div>
 </template>
@@ -12,4 +12,5 @@
 <script setup>
 import InstrumentControlPanel from './instrumentControlPanel.vue';
 import StreamControl from '../streamControl/streamControl.vue';
+import MiniStreamControl from '../streamControl/miniStreamControl.vue';
 </script>
