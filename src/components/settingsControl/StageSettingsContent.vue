@@ -119,7 +119,7 @@ const showModal = ref(false)
 
 const props = defineProps({
     foo: { type: String, required: true },
-    bar: Number
+    bar: { type: String, required: true }
 })
 
 props.foo

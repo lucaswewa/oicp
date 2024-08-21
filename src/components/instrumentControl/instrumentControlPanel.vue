@@ -40,42 +40,54 @@
           <div
             class="uk-accordion-content"
           >
-            <div class="uk-margin">
-              <label>
-                <input
-                  v-model="cameraSettingsEnabled"
-                  class="uk-checkbox"
-                  type="checkbox"
-                />
-                Enable camera settings
-              </label>
-            </div>
-            <p>
-              If `Enable camera settings` is checked, you can make changes to the
-              camera.
-            </p>
             <div>
+              <!-- Exposure time -->
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <label class="uk-form-label" for="form-stacked-text">
                   Exposure time (ms)
                 </label>
-                <input
-                  v-model="cameraExposureTime"
-                  class="uk-input uk-form-small"
-                  type="number"
-                  min="1000"
-                />
+                <div class="uk-margin-remove-bottom" uk-grid>
+                  <div class="uk-width-2-3">
+                    <input
+                      v-model="cameraExposureTime"
+                      class="uk-input uk-form-small"
+                      type="number"
+                      min="1000"
+                    />
+                  </div>
+                  <div class="uk-width-1-3">
+                    <button
+                      class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                      @click="handleMoveStagePositionRel(0.5)"
+                    >
+                      Set
+                    </button>
+                  </div>
+                </div>
               </div>
+              <!-- Pixel format -->
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <label class="uk-form-label" for="form-stacked-text">
                   Pixel format
                 </label>
-                <input
-                  v-model="cameraPixelFormat"
-                  class="uk-input uk-form-small"
-                  type="text"
-                  min="100"
-                />
+                <div class="uk-margin-remove-bottom" uk-grid>
+                  <div class="uk-width-2-3">
+                    <input
+                      v-model="cameraPixelFormat"
+                      class="uk-input uk-form-small"
+                      type="text"
+                      min="100"
+                    />
+                  </div>
+                  <div class="uk-width-1-3">
+                    <button
+                      class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                      @click="handleMoveStagePositionRel(0.5)"
+                    >
+                      Set
+                    </button>
+                  </div>                
+                </div>
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
@@ -125,18 +137,20 @@
       <li :class="{ 'uk-open': true }">
         <a class="uk-accordion-title" href="#">Color Filters Control</a>
         <div class="uk-accordion-content">
-          <div >
+          <div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <label class="uk-form-label" for="form-stacked-text">
                 Color Filter:
               </label>
-              <input
-                v-model="colorFilter"
-                class="uk-input uk-form-small"
-                type="string"
-              />
-            </div>
-            <div class="uk-margin-small uk-margin-remove-bottom">
+              <select v-model="colorFilter" class="uk-select uk-form-small uk-margin-small" @change="onSetColorFilter($event)">
+                <option>X</option>
+                <option>Y</option>
+                <option>Z</option>
+                <option>CLEAR</option>
+              </select>            
+
+
+              <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
                   class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleGetColorFilter()"
@@ -144,14 +158,7 @@
                   Get Color Filter
                 </button>
               </div>
-              <div class="uk-margin-small uk-margin-remove-bottom">
-                <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                  @click="handlePostColorFilter()"
-                >
-                  Change Color Filter
-                </button>
-              </div>
+            </div>
           </div>
         </div>
       </li>
@@ -165,11 +172,13 @@
               <label class="uk-form-label" for="form-stacked-text">
                 ND Filter:
               </label>
-              <input
-                v-model="ndFilter"
-                class="uk-input uk-form-small"
-                type="string"
-              />
+              <select v-model="ndFilter" class="uk-select uk-form-small uk-margin-small" @change="onSetNDFilter($event)">
+                <option>CLEAR</option>
+                <option>ND1</option>
+                <option>ND2</option>
+                <option>ND3</option>
+                <option>BLOCK</option>
+              </select>            
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
@@ -177,14 +186,6 @@
                   @click="handleGetNDFilter()"
                 >
                   Get ND Filter
-                </button>
-              </div>
-              <div class="uk-margin-small uk-margin-remove-bottom">
-                <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                  @click="handlePostNDFilter()"
-                >
-                  Change ND Filter
                 </button>
               </div>
           </div>
@@ -214,34 +215,34 @@
                 Get Stage Position
               </button>
             </div>
-            <div class="uk-margin-small uk-margin-remove-bottom">
-              <button
-                class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                @click="handleMoveStagePositionAbs()"
-              >
-                Move to Position
-              </button>
-            </div>
             <div 
-              class="uk-child-width-1-2"
+              class="uk-margin-remove-bottom" 
               uk-grid
             >
-              <p>
+              <div class="uk-width-1-4">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                  @click="handleMoveStagePositionRel(-0.5)"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleMoveStagePositionRel(-0.1)"
                 >
-                  Move Near -0.5 mm
+                  -0.1
                 </button>
-              </p>
-              <p>
+              </div>
+              <div class="uk-width-1-2">
                 <button
-                  class="uk-button uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
-                  @click="handleMoveStagePositionRel(0.5)"
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleMoveStagePositionAbs()"
                 >
-                  Move Far +0.5 mm
+                  Move Abs
                 </button>
-              </p>
+              </div>
+              <div class="uk-width-1-4">
+                <button
+                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  @click="handleMoveStagePositionRel(0.1)"
+                >
+                  +0.1
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -375,7 +376,6 @@ export default {
       resizeCapture: false,
       captureNotes: "",
       resizeDims: [640, 480],
-      cameraSettingsEnabled: false,
       cameraPixelFormat: "Mono8",
       cameraExposureTime: 30,
       colorFilter: 'X',
@@ -429,6 +429,10 @@ export default {
       const config = { headers: {'Content-Type': 'application/json'} };
       axios.post("http://localhost:8000/myxthing/move_color_filter", this.colorFilter, config)
     },
+    onSetColorFilter: function(event) {
+      console.log(event)
+      this.handlePostColorFilter()
+    },
     handleGetNDFilter: function() {
       console.log(this.ndFilter)
       axios.get("http://localhost:8000/myxthing/nd_filter").then(response => {
@@ -440,6 +444,10 @@ export default {
       console.log(this.ndFilter)
       const config = { headers: {'Content-Type': 'application/json'} };
       axios.post("http://localhost:8000/myxthing/move_nd_filter", this.ndFilter, config)
+    },
+    onSetNDFilter: function(event) {
+      console.log(event)
+      this.handlePostNDFilter()
     },
     handleGetStagePosition: function() {
       axios.get("http://localhost:8000/myxthing/stage").then(response => {
