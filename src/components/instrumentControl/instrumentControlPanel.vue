@@ -27,7 +27,7 @@
                   </div>
                   <div class="uk-width-1-3">
                     <button
-                      class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                      class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                       @click="handlePutExposureTime()"
                     >
                       Set
@@ -56,7 +56,7 @@
                               </div>
                   <div class="uk-width-1-3">
                     <button
-                      class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                      class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                       @click="handlePutPixelFormat()"
                     >
                       Set
@@ -66,39 +66,39 @@
               </div>
               <div class="uk-margin-small uk-margin-remove-bottom">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                   @click="handleOpenCamera()"
                 >
                   Open Camera
                 </button>
               </div>
-              <div class="uk-margin-small uk-margin-remove-bottom">
+              <div class="uk-margin-small uk-margin-remove-bottom uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                   @click="handleStartStreaming()"
                 >
                   Start Streaming
                 </button>
               </div>
-              <div class="uk-margin-small uk-margin-remove-bottom">
+              <div class="uk-margin-small uk-margin-remove-bottom uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                   @click="handleStopStreaming()"
                 >
                   Stop Streaming
                 </button>
               </div>
-              <div class="uk-margin-small uk-margin-remove-bottom">
+              <div class="uk-margin-small uk-margin-remove-bottom uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                   @click="handleCloseCamera()"
                 >
                   Close Camera
                 </button>
               </div>
-              <div class="uk-margin-small uk-margin-remove-bottom">
+              <div class="uk-margin-small uk-margin-remove-bottom uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                   @click="handleCapture()"
                 >
                   Capture
@@ -125,9 +125,9 @@
               </select>            
 
 
-              <div class="uk-margin-small uk-margin-remove-bottom">
+              <div class="uk-margin-small uk-margin-remove-bottom uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                   @click="handleGetColorFilter()"
                 >
                   Get Color Filter
@@ -155,7 +155,7 @@
                 <option>BLOCK</option>
               </select>            
             </div>
-            <div class="uk-margin-small uk-margin-remove-bottom">
+            <div class="uk-margin-small uk-margin-remove-bottom uk-margin-remove-top">
                 <button
                   class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
                   @click="handleGetNDFilter()"
@@ -182,37 +182,37 @@
                 type="number"
               />
             </div>
-            <div class="uk-margin-small uk-margin-remove-bottom">
+            <div class="uk-margin-small uk-margin-remove-bottom ">
               <button
-                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-width-1-1"
                 @click="handleGetStagePosition()"
               >
                 Get Stage Position
               </button>
             </div>
             <div 
-              class="uk-margin-remove-bottom" 
+              class="uk-margin-small uk-margin-remove-bottom uk-margin-remove-top" 
               uk-grid
             >
-              <div class="uk-width-1-4">
+              <div class="uk-width-1-4 uk-margin-small uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                   @click="handleMoveStagePositionRel(-0.1)"
                 >
                   -0.1
                 </button>
               </div>
-              <div class="uk-width-1-2">
+              <div class="uk-width-expand uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                   @click="handleMoveStagePositionAbs()"
                 >
                   Move Abs
                 </button>
               </div>
-              <div class="uk-width-1-4">
+              <div class="uk-width-1-4 uk-margin-small uk-margin-remove-top">
                 <button
-                  class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                  class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                   @click="handleMoveStagePositionRel(0.1)"
                 >
                   +0.1
@@ -260,7 +260,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                 @click="handleGetRxSphPower()"
               >
                 Get Sph Power
@@ -268,7 +268,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                 @click="handleMoveRxSphPower()"
               >
                 Move Sph Power
@@ -288,7 +288,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                 @click="handleGetRxCylPower()"
               >
                 Get Cyl Power
@@ -296,7 +296,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                 @click="handleMoveRxCylPower()"
               >
                 Move Cyl Power
@@ -316,7 +316,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                 @click="handleGetRxCylAxis()"
               >
                 Get Cyl Axis
@@ -324,7 +324,7 @@
             </div>
             <div class="uk-margin-small uk-margin-remove-bottom">
               <button
-                class="uk-button uk-form-small uk-button-primary uk-margin uk-margin-remove-top uk-width-1-1"
+                class="uk-button uk-form-small uk-button-primary uk-margin-small uk-margin-remove-top uk-margin-remove-bottom uk-width-1-1"
                 @click="handleMoveRxCylAxis()"
               >
                 Move Cyl Axis
